@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-    const props = defineProps(['tittle', 'date', 'id', 'class', 'priority'])
+    const props = defineProps(['tittle', 'date', 'id', 'class', 'classTittle', 'priority'])
     const emit = defineEmits(['eventoChecked', 'eventoDelete', 'eventoPriority'])
     var fecha = ref('')
     function calculateTime() {
@@ -40,7 +40,7 @@
     <div class='note' :id=props.id>
         <div class='note__firts'>
             <div :class=props.class :id=props.id @click="eventoChecked"></div>
-            <div class='note__title'>
+            <div :class=props.classTittle>
                 <h2>{{ props.tittle }}</h2>
             </div>
             <div class='note__delete'>

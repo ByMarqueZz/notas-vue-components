@@ -4,7 +4,7 @@
   import nota from './components/nota.vue'
   function addNote(titulo) {
     let now = new Date();
-    arrayNotes.value.push({ id: arrayNotes.value.length, tittle: titulo, priority: 'low', date: now, class: 'note__checked'})
+    arrayNotes.value.push({ id: arrayNotes.value.length, tittle: titulo, priority: 'low', date: now, classTittle: 'note__title', class: 'note__checked'})
     totales.value++
     pendientes.value++
   }
@@ -20,9 +20,11 @@
       if (nota.id == id) {
         if (nota.class == 'note__checked') {
           nota.class = 'note__checked note__checked--checked'
+          nota.classTittle = 'note__title note__title--checked'
           pendientes.value--
         } else {
           nota.class = 'note__checked'
+          nota.classTittle = 'note__title'
           pendientes.value++
         }
       }
@@ -56,7 +58,7 @@
   </header>
 
   <main>
-    <nota v-for="nota in arrayNotes" :class="nota.class" :tittle="nota.tittle" :priority="nota.priority" @eventoDelete="borrarNota(nota.id)" @eventoChecked="cambiarChecked(nota.id)" @eventoPriority="cambiarPrioridad(priority, nota.id)"></nota>
+    <nota v-for="nota in arrayNotes" :classTittle="nota.classTittle" :class="nota.class" :tittle="nota.tittle" :priority="nota.priority" @eventoDelete="borrarNota(nota.id)" @eventoChecked="cambiarChecked(nota.id)" @eventoPriority="cambiarPrioridad(priority, nota.id)"></nota>
   </main>
 </template>
 
