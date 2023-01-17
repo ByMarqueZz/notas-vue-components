@@ -62,7 +62,7 @@ body {
     align-items: center;
 }
 .note__checked--checked {
-    background-image: url(./img/check.png);
+    background-image: url(../../public/check.png);
     background-size: cover;
 }
 .note__title--checked {
@@ -83,7 +83,7 @@ body {
     font-weight: bold;
     display: flex;
 }
-.note__priority--button {
+.note__priority--button-- {
     display: flex;
 }
 .flechas {
