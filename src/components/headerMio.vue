@@ -3,8 +3,8 @@
   const props = defineProps(['pendientes', 'totales'])
   const emit = defineEmits(['eventoNotas', 'eventoBorrarCompletadas'])
   function addNote() {
-    
     emit('eventoNotas', titulo)
+    titulo = ''
   }
 
   function borrarCompletadas() {
