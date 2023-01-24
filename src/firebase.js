@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection } from 'firebase/firestore'
 
+import { getAuth } from 'firebase/auth'
+
 export const firebaseApp = initializeApp({
     apiKey: "AIzaSyAxnqgOyamTRwsVSRxc3V_sU3zmJ_j-pj8",
     authDomain: "notas-vue-9fc62.firebaseapp.com",
@@ -13,6 +15,7 @@ export const firebaseApp = initializeApp({
 
 // used for the firestore refs
 const db = getFirestore(firebaseApp)
+export const auth = getAuth(firebaseApp)
 
 // here we can export reusable database references
 // export const todosRef = collection(db, 'todos')

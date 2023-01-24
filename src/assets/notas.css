@@ -4,6 +4,12 @@ body {
     font-family: Comic Sans MS;
 }
 
+#headerApp {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 #tittle {
     text-align: center;
     font-size: 2em;
